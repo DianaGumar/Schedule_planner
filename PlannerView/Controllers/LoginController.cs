@@ -21,5 +21,11 @@ namespace Planner.Controllers
             return View();
 
         }
+
+        public IActionResult Error()
+        {
+            return NotFound();
+            //return View();
+        }
     }
 }

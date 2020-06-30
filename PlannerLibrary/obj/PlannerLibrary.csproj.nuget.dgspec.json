@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "N:\\VSTUDIO_PR\\PlannerLibrary\\PlannerLibrary.csproj": {}
+    "N:\\VSTUDIO_PR\\Planner\\PlannerLibrary\\PlannerLibrary.csproj": {}
   },
   "projects": {
-    "N:\\VSTUDIO_PR\\PlannerLibrary\\PlannerLibrary.csproj": {
+    "N:\\VSTUDIO_PR\\Planner\\PlannerLibrary\\PlannerLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "N:\\VSTUDIO_PR\\PlannerLibrary\\PlannerLibrary.csproj",
+        "projectUniqueName": "N:\\VSTUDIO_PR\\Planner\\PlannerLibrary\\PlannerLibrary.csproj",
         "projectName": "PlannerLibrary",
-        "projectPath": "N:\\VSTUDIO_PR\\PlannerLibrary\\PlannerLibrary.csproj",
+        "projectPath": "N:\\VSTUDIO_PR\\Planner\\PlannerLibrary\\PlannerLibrary.csproj",
         "packagesPath": "C:\\Users\\stasg\\.nuget\\packages\\",
-        "outputPath": "N:\\VSTUDIO_PR\\PlannerLibrary\\obj\\",
+        "outputPath": "N:\\VSTUDIO_PR\\Planner\\PlannerLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stasg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
             }
           },
           "imports": [

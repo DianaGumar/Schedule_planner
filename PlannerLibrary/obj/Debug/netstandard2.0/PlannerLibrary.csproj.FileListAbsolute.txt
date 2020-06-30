@@ -1,0 +1,5 @@
+N:\VSTUDIO_PR\Planner\PlannerLibrary\bin\Debug\netstandard2.0\PlannerLibrary.deps.json
+N:\VSTUDIO_PR\Planner\PlannerLibrary\bin\Debug\netstandard2.0\PlannerLibrary.dll
+N:\VSTUDIO_PR\Planner\PlannerLibrary\obj\Debug\netstandard2.0\PlannerLibrary.csprojAssemblyReference.cache
+N:\VSTUDIO_PR\Planner\PlannerLibrary\obj\Debug\netstandard2.0\PlannerLibrary.AssemblyInfoInputs.cache
+N:\VSTUDIO_PR\Planner\PlannerLibrary\obj\Debug\netstandard2.0\PlannerLibrary.AssemblyInfo.cs

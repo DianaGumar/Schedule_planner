@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "N:\\VSTUDIO_PR\\Planner\\Planner.csproj": {}
+    "N:\\VSTUDIO_PR\\Planner\\PlannerView\\Planner.csproj": {}
   },
   "projects": {
-    "N:\\VSTUDIO_PR\\Planner\\Planner.csproj": {
+    "N:\\VSTUDIO_PR\\Planner\\PlannerView\\Planner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "N:\\VSTUDIO_PR\\Planner\\Planner.csproj",
+        "projectUniqueName": "N:\\VSTUDIO_PR\\Planner\\PlannerView\\Planner.csproj",
         "projectName": "Planner",
-        "projectPath": "N:\\VSTUDIO_PR\\Planner\\Planner.csproj",
+        "projectPath": "N:\\VSTUDIO_PR\\Planner\\PlannerView\\Planner.csproj",
         "packagesPath": "C:\\Users\\stasg\\.nuget\\packages\\",
-        "outputPath": "N:\\VSTUDIO_PR\\Planner\\obj\\",
+        "outputPath": "N:\\VSTUDIO_PR\\Planner\\PlannerView\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stasg\\AppData\\Roaming\\NuGet\\NuGet.Config",
