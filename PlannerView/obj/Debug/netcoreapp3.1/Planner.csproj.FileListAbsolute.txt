@@ -190,7 +190,6 @@ N:\VSTUDIO_PR\Planner\PlannerView\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnaly
 N:\VSTUDIO_PR\Planner\PlannerView\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 N:\VSTUDIO_PR\Planner\PlannerView\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 N:\VSTUDIO_PR\Planner\PlannerView\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Planner.csprojAssemblyReference.cache
 N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\staticwebassets\Planner.StaticWebAssets.Manifest.cache
 N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\staticwebassets\Planner.StaticWebAssets.xml
 N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
@@ -213,3 +212,5 @@ N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Planner.dll
 N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Planner.pdb
 N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Razor\Views\Login\Error.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Razor\Views\Login\Example.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
+N:\VSTUDIO_PR\Planner\PlannerView\obj\Debug\netcoreapp3.1\Planner.genruntimeconfig.cache
