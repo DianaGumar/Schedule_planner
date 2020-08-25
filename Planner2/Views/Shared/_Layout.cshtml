@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Planner</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body class="text-center ">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-2">
+            <div class="container">
+                <a class="navbar-brand" href='@Url.Action("Index", "Login")'>Planner</a>
+                <div class="float-lg">guest</div>
+            </div>
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            2020 - Planner - autor <a href="https://www.linkedin.com/in/diana-gumar/">Gumar Diana</a>
+        </div>
+    </footer>
+
+    @*@RenderSection("Scripts", required: false)*@
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PlannerLib.Model.User>
+@{
+    ViewData["Title"] = "Login";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+    <form class="form-signin col-md-4" asp-action="Login">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only ">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <p></p>
+        <button class="btn btn-lg btn-primary d-inline" type="submit">Sign in</button>
+        <a class="navbar-brand" asp-action="Reg">Registrate</a>
+    </form>
+
+<p></p>
+<hr class="mb-2">
+<h4 class="mb-3">all users</h4>
+
+<div class="container text-center">
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.role)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="text-left">
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.role)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@user.id">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@user.id">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

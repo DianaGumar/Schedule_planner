@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PlannerLibrary.Model
+namespace PlannerLib.Model
 {
     class Schedule
     {

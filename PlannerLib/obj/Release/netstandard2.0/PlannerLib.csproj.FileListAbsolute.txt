@@ -1,0 +1,9 @@
+N:\VSTUDIO_PR\Planner\PlannerLib\bin\Release\netstandard2.0\PlannerLib.deps.json
+N:\VSTUDIO_PR\Planner\PlannerLib\bin\Release\netstandard2.0\PlannerLib.dll
+N:\VSTUDIO_PR\Planner\PlannerLib\bin\Release\netstandard2.0\PlannerLib.pdb
+N:\VSTUDIO_PR\Planner\PlannerLib\obj\Release\netstandard2.0\PlannerLib.csprojAssemblyReference.cache
+N:\VSTUDIO_PR\Planner\PlannerLib\obj\Release\netstandard2.0\PlannerLib.AssemblyInfoInputs.cache
+N:\VSTUDIO_PR\Planner\PlannerLib\obj\Release\netstandard2.0\PlannerLib.AssemblyInfo.cs
+N:\VSTUDIO_PR\Planner\PlannerLib\obj\Release\netstandard2.0\PlannerLib.csproj.CoreCompileInputs.cache
+N:\VSTUDIO_PR\Planner\PlannerLib\obj\Release\netstandard2.0\PlannerLib.dll
+N:\VSTUDIO_PR\Planner\PlannerLib\obj\Release\netstandard2.0\PlannerLib.pdb

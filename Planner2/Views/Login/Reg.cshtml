@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Reg";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@*<h1>Registration</h1>
+
+    <ul>
+        @for (int i = 0; i < (int)ViewData["Age"]; i++)
+        {
+            <li>@ViewData["Age"] + @i</li>
+        }
+    </ul>*@
+
+
+
+<hr class="mb-2">
+
+@*novalidate
+    needs-validation*@
+
+<form class="form-signin  text-center col-md-6" asp-action="Create">
+    <h4 class="mb-3">Registrate</h4>
+
+    <div class="text-left">
+
+        <div class="mb-1">
+            <label for="username">Username</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                    Your username is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-1">
+            <label for="username">Password</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="password" placeholder="Password" required>
+            </div>
+        </div>
+
+        <div class="mb-1">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+            </div>
+        </div>
+
+        <div class="mb-1">
+            <label for="phone">Phone<small class="text-muted">(optional)</small></label>
+            <input type="phone" class="form-control" id="phone" placeholder="">
+            <div class="invalid-feedback">
+                Please enter a valid phone address for shipping updates.
+            </div>
+        </div>
+
+    </div>
+
+    <p></p>
+
+    <a href="#" class="btn btn-primary my-2" type="submit">Create account</a>
+    <a class="navbar-brand" asp-action="Login">log in</a>
+
+</form>
