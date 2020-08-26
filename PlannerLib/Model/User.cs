@@ -28,6 +28,13 @@ namespace PlannerLib.Model
             this.phone = phone;
         }
 
+        public int Id { get { return id; } set { id = value; } }
+        public string Name { get { return name; } set { name = value; } }
+        public string Password { get { return password; } set { password = value; } }
+        public string Email { get { return email; } set { email = value; } }
+        public string Phone { get { return phone; } set { phone = value; } }
+
+
         public int id;
         public string name;
         public string password;
@@ -35,7 +42,10 @@ namespace PlannerLib.Model
         public string phone;
         public int role = 1;
 
-
+        public override string ToString()
+        {
+            return id + " " + name + " " + password + " " + email + " " + phone;
+        }
 
     }
 }

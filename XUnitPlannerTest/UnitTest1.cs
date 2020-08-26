@@ -1,9 +1,9 @@
 using System;
 using Xunit;
 
-using PlannerLibrary.Model;
 using PlannerLib.DataBase;
 using System.Collections.Generic;
+using PlannerLib.Model;
 
 namespace XUnitPlannerTest
 {
@@ -12,7 +12,7 @@ namespace XUnitPlannerTest
         [Fact]
         public void addUser()
         {
-            User user = new User("ffhdrhr", "1111", "fdbfdb");
+            User user = new User("root", "1111", "aaa@mail.ru");
             var userController = new MysqlController<User>();
 
             int i = userController.Create(user);
@@ -25,7 +25,7 @@ namespace XUnitPlannerTest
         {
             var userController = new MysqlController<User>();
 
-            User user2 = userController.Reed(4);
+            User user2 = userController.Reed(2);
 
             Assert.NotNull(user2);
         }
@@ -36,7 +36,7 @@ namespace XUnitPlannerTest
             var userController = new MysqlController<User>();
 
             User user = userController.Reed(2);
-            user.name = "222";
+            user.Name = "222";
 
             int i = userController.Update(user);
 

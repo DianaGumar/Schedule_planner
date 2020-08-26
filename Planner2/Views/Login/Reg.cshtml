@@ -1,5 +1,7 @@
-﻿@{
+﻿@model PlannerLib.Model.User
+@{
     ViewData["Title"] = "Reg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
@@ -19,49 +21,50 @@
 @*novalidate
     needs-validation*@
 
-<form class="form-signin  text-center col-md-6" asp-action="Create">
+<form class="form-signin  text-center col-md-6" asp-action="Reg">
     <h4 class="mb-3">Registrate</h4>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <div class="text-left">
 
-        <div class="mb-1">
-            <label for="username">Username</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="username" placeholder="Username" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                    Your username is required.
-                </div>
-            </div>
+        <div class="form-group">
+            <label asp-for="Name" class="label"></label>
+            <input asp-for="Name" class="form-control" placeholder="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
-        <div class="mb-1">
-            <label for="username">Password</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="password" placeholder="Password" required>
-            </div>
+        <div class="form-group">
+            <label asp-for="password" class="label"></label>
+            <input asp-for="password" class="form-control" type="password" placeholder="Password" required />
+            <span asp-validation-for="password" class="text-danger"></span>
         </div>
 
-        <div class="mb-1">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com">
-            <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-            </div>
+        <div class="form-group">
+            <label asp-for="email" class="label"></label>
+            <input asp-for="email" class="form-control" type="email" placeholder="you@example.com" />
+            <span asp-validation-for="email" class="text-danger"></span>
         </div>
 
-        <div class="mb-1">
-            <label for="phone">Phone<small class="text-muted">(optional)</small></label>
-            <input type="phone" class="form-control" id="phone" placeholder="">
-            <div class="invalid-feedback">
-                Please enter a valid phone address for shipping updates.
-            </div>
+        <div class="form-group">
+            <label asp-for="phone" class="label"></label>
+            <input asp-for="phone" class="form-control" />
+            <small class="text-muted">(optional)</small>
+            <span asp-validation-for="phone" class="text-danger"></span>
         </div>
-
     </div>
 
     <p></p>
 
-    <a href="#" class="btn btn-primary my-2" type="submit">Create account</a>
-    <a class="navbar-brand" asp-action="Login">log in</a>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary my-2" />
+        <a class="navbar-brand" asp-action="Login">log in</a>
+    </div>
+    
 
 </form>
+
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

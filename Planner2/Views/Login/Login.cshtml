@@ -7,10 +7,17 @@
 
     <form class="form-signin col-md-4" asp-action="Login">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only ">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+        <div class="form-group">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        </div>
+
         <p></p>
         <button class="btn btn-lg btn-primary d-inline" type="submit">Sign in</button>
         <a class="navbar-brand" asp-action="Reg">Registrate</a>
@@ -25,10 +32,10 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.id)
+                    @Html.DisplayNameFor(model => model.Id)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.name)
+                    @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.password)
@@ -50,10 +57,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => user.id)
+                        @Html.DisplayFor(modelItem => user.Id)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => user.name)
+                        @Html.DisplayFor(modelItem => user.Name)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => user.password)
@@ -69,8 +76,8 @@
                     </td>
 
                     <td>
-                        <a asp-action="Edit" asp-route-id="@user.id">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@user.id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@user.Id">Delete</a>
 
                     </td>
                 </tr>
