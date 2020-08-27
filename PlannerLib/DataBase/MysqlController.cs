@@ -185,6 +185,62 @@ namespace PlannerLib.DataBase
             return entity;
         }
 
+        //T obj будет как out
+        public T Reed(T obj, params string[] lables)
+        {
+            //select * from planner.users where planner.users.email = "lantan.mp4@gmail.com" and planner.users.password = "123"
+
+            T entity = new T();
+
+            List<object> values = GetEntrailsValues(obj);
+            StringBuilder sb = new StringBuilder();
+
+            foreach(string lable in lables)
+            {
+                for(int i = 0; i < Entrails[1].Count; i ++)
+                {
+                    if (Entrails[1][i].ToLower().Equals(lable.ToLower()))
+                    {
+                        if (i > 0 && sb.Length > 0) sb.Append(" and ");
+                        sb.Append(lable.ToLower());
+                        sb.Append("='");
+                        sb.Append(values[i]);
+                        sb.Append("'");
+                        
+                        break;
+                    }
+                }
+            }
+
+            string sql = "select * from " + Name + "s where " + sb.ToString();
+
+            try
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    object[] inside = new object[reader.FieldCount];
+                    reader.GetValues(inside);
+                    entity = ReflectionWork(inside);
+
+                }
+                reader.Close();
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Connect to bd exeption: " + e.Message);
+            }
+            finally { connection.Close(); }
+
+            return entity;
+        }
+
+
         public override int Create(T obj)
         {
             //create sql query

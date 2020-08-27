@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PlannerLib.Model.User>
+﻿@model PlannerLib.Model.User
 @{
     ViewData["Title"] = "Login";
 }
@@ -9,21 +9,28 @@
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
         <div class="form-group">
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input asp-for="Email" class="form-control" type="email" placeholder="Email address" required autofocus />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input asp-for="Password" class="form-control" type="password" placeholder="Password" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
 
         <p></p>
         <button class="btn btn-lg btn-primary d-inline" type="submit">Sign in</button>
         <a class="navbar-brand" asp-action="Reg">Registrate</a>
+
+        <p></p>
+        <p></p>
+
+        <a class="btn btn-light d-block" >
+            <img src="https://img.icons8.com/color/24/000000/google-logo.png"> LOGIN BY GOOGLE
+        </a>
     </form>
 
-<p></p>
+@*<p></p>
 <hr class="mb-2">
 <h4 class="mb-3">all users</h4>
 
@@ -84,5 +91,5 @@
             }
         </tbody>
     </table>
-</div>
+</div>*@
 

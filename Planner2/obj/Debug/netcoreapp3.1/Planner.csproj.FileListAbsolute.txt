@@ -119,8 +119,15 @@ N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Login\Edit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Login\Reg.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache

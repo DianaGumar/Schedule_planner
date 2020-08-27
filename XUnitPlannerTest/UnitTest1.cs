@@ -65,5 +65,20 @@ namespace XUnitPlannerTest
         }
 
 
+        [Fact]
+        public void ReadUserBy()
+        {
+            var userController = new MysqlController<User>();
+
+            User u = new User();
+            u.Password = "1234";
+            u.email = "lantan.mp4@gmail.com";
+
+            u = userController.Reed(u, "Email", "Password");
+
+            Assert.NotNull(u);
+        }
+
+
     }
 }
