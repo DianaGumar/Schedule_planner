@@ -18,9 +18,6 @@
 
 <hr class="mb-2">
 
-@*novalidate
-    needs-validation*@
-
 <form class="form-signin  text-center col-md-6" asp-action="Reg">
     <h4 class="mb-3">Registrate</h4>
 
@@ -35,22 +32,22 @@
         </div>
 
         <div class="form-group">
-            <label asp-for="password" class="label"></label>
-            <input asp-for="password" class="form-control" type="password" placeholder="Password" required />
-            <span asp-validation-for="password" class="text-danger"></span>
+            <label asp-for="Password" class="label"></label>
+            <input asp-for="Password" class="form-control" type="password" placeholder="Password" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="email" class="label"></label>
-            <input asp-for="email" class="form-control" type="email" placeholder="you@example.com" required/>
-            <span asp-validation-for="email" class="text-danger"></span>
+            <label asp-for="Email" class="label"></label>
+            <input asp-for="Email" class="form-control"  placeholder="you@example.com" required/>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <label asp-for="phone" class="label"></label>
-            <input asp-for="phone" class="form-control" />
+            <label asp-for="Phone" class="label"></label>
+            <input asp-for="Phone" class="form-control" />
             <small class="text-muted">(optional)</small>
-            <span asp-validation-for="phone" class="text-danger"></span>
+            <span asp-validation-for="Phone" class="text-danger"></span>
         </div>
     </div>
 

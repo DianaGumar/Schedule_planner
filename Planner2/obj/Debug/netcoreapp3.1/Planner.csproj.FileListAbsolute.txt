@@ -131,3 +131,7 @@ N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.P
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Main.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TaskEdit.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Read.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Create.cshtml.g.cs

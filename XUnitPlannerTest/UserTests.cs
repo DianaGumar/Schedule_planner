@@ -7,12 +7,15 @@ using PlannerLib.Model;
 
 namespace XUnitPlannerTest
 {
-    public class UnitTest1
+    public class UserTests
     {
         [Fact]
         public void addUser()
         {
-            User user = new User("root", "1111", "aaa@mail.ru");
+            User user = new User();
+            user.Name = "root";
+            user.Password = "1111";
+            user.Email = "aaa@mail.ru";
             var userController = new MysqlController<User>();
 
             int i = userController.Create(user);
@@ -72,7 +75,7 @@ namespace XUnitPlannerTest
 
             User u = new User();
             u.Password = "1234";
-            u.email = "lantan.mp4@gmail.com";
+            u.Email = "lantan.mp4@gmail.com";
 
             u = userController.Reed(u, "Email", "Password");
 

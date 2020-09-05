@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,11 +26,10 @@ namespace Planner.Controllers
         private IConfiguration _config;
         MysqlController<User> userDAL = new MysqlController<User>();
 
+
         [HttpGet]
         public IActionResult Login()
         {
-            //List<User> users = userDAL.Reed().ToList();
-
             return View();
         }
 
@@ -45,7 +45,8 @@ namespace Planner.Controllers
                 var tokenStr = GenerateJSONWebToken(existUser);
                 response = Ok(new { token = tokenStr });
 
-                return RedirectToAction("Reg");
+                //return RedirectToAction("Main", "Table", new { userName = user.Name });
+                return RedirectToAction("Main", "Task");
             }
 
             //return response;
@@ -100,21 +101,70 @@ namespace Planner.Controllers
             return View();
         }
 
-        //("name", "password", "email", "phone")
+
+
+        private bool CheckUserValid(User user)
+        {
+            Dictionary<string, string> d = new Dictionary<string, string>();
+
+            if (user.Name == null)
+                d.Add("Name", "name is requirement field");
+            else if (user.Name.Length > 50)
+                d.Add("Name", "to long");
+
+            if (user.Password == null)
+                d.Add("Password", "password is requirement field");
+            else if (user.Password.Length > 50)
+                d.Add("Password", "to long");
+
+            if (user.Email == null)
+                d.Add("Email", "email is requirement field");
+            else if (user.Email.Length > 50)
+                d.Add("Email", "to long");
+
+            if (user.Phone == null) { }
+
+            else if (user.Phone.Length > 20)
+                d.Add("Phone", "to long");
+
+
+            try
+            {
+                MailAddress m = new MailAddress(user.Email);
+            }
+            catch (FormatException e)
+            {
+                if (d.ContainsKey("Email"))
+                {
+                    d["Email"] = d["Email"] + ";\n" + e.Message;
+                }
+                else
+                {
+                    d.Add("Email", e.Message);
+                }
+                
+            }
+
+            if (d.Count != 0)
+            {
+                foreach (KeyValuePair<string, string> entry in d)
+                {
+                    ModelState.AddModelError(entry.Key, entry.Value);
+                }
+                
+                return false;
+            }
+            else return true;
+
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Reg([Bind] User user)
         {
 
-            //добавить проверку на валидность данных
-
-            //добавить проверку на существование почты
-
-            //if (user.Name.Length > 5)
-            //{
-            //    ModelState.AddModelError("Name", "to long");
-            //}
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && CheckUserValid(user))
             {
                 userDAL.Create(user);
                 return RedirectToAction("Login");
@@ -133,6 +183,7 @@ namespace Planner.Controllers
             User user = userDAL.Reed(id);
 
             if (user == null) return NotFound();
+
             return View(user);
         }
 
@@ -140,7 +191,7 @@ namespace Planner.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit([Bind] User user, int id = 0)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && CheckUserValid(user))
             {
                 ViewBag.Message = "Valid";
                 userDAL.Update(user);

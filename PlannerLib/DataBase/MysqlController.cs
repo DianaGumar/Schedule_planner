@@ -45,12 +45,12 @@ namespace PlannerLib.DataBase
 
             Type type = typeof(T);
 
-            var Entrails = type.GetFields();
+            var Entrails = type.GetProperties();
 
-            foreach (FieldInfo fieldsInfo in Entrails)
+            foreach (PropertyInfo propertiesInfo in Entrails)
             {
-                strs[0].Add(fieldsInfo.FieldType.Name);
-                strs[1].Add(fieldsInfo.Name);
+                strs[0].Add(propertiesInfo.PropertyType.Name);
+                strs[1].Add(propertiesInfo.Name);
             }
 
             return strs;
@@ -65,11 +65,11 @@ namespace PlannerLib.DataBase
             List<object> strs = new List<object>();
             Type type = typeof(T);
 
-            var Entrails = type.GetFields();
+            var Entrails = type.GetProperties();
 
-            foreach (FieldInfo fieldsInfo in Entrails)
+            foreach (PropertyInfo propertyInfo in Entrails)
             {
-                strs.Add(fieldsInfo.GetValue(obj));
+                strs.Add(propertyInfo.GetValue(obj));
             }
 
             return strs;
@@ -85,12 +85,18 @@ namespace PlannerLib.DataBase
             T t = new T();
 
             Type type = typeof(T);
-            var fields = type.GetFields();
+            var propertys = type.GetProperties();
 
             int i = 0;
-            foreach (FieldInfo fieldInfo in fields)
+            foreach (PropertyInfo propertyInfo in propertys)
             {
-                fieldInfo.SetValue(t, obj[i]);
+                if (obj[i] == null || obj[i] is System.DBNull)
+                { }
+                else
+                {
+                    propertyInfo.SetValue(t, obj[i]);
+                }
+                
                 i++;
             }
 
@@ -249,29 +255,49 @@ namespace PlannerLib.DataBase
             StringBuilder sb = new StringBuilder();
             sb.Append("insert into " + Name + "s (");
             int count = Entrails[0].Count;
-            for (int i = 1; i < count - 1; i++)
+            string prefix = "";
+            for (int i = 1; i < count; i++)
             {
-                sb.Append(Entrails[1][i] + ",");
-            }
-            sb.Append(Entrails[1][count - 1]);
-            sb.Append(") values( ");
-            for (int i = 1; i < count - 1; i++)
-            {
+
                 if (Entrails[0][i].Equals("DateTime"))
                 {
-                    values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");
+                    if (values[i].ToString() == DateTime.MinValue.ToString()) { values[i] = null; }
+                    else
+                    {
+                        values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd hh-mm-ss");
+                    }
                 }
-                sb.Append("'" + values[i] + "', ");
+
+
+                if (values[i] != null)
+                {
+                    if (values[i].ToString() != "")
+                    {
+                        sb.Append(prefix);
+                        prefix = ",";
+                        sb.Append(Entrails[1][i]);
+                    }    
+                } 
             }
-            if (Entrails[0][count - 1].Equals("DateTime"))
+            sb.Append(") values( ");
+            prefix = "";
+            for (int i = 1; i < count; i++)
             {
-                values[count - 1] = ((DateTime)values[count - 1]).ToString("yyyy-MM-dd");
+                
+                if(values[i] != null)
+                {
+                    if (values[i].ToString() != "")
+                    {
+                        sb.Append(prefix);
+                        prefix = ",";
+                        sb.Append("'" + values[i] + "'");
+                    }
+                }
             }
-            sb.Append(values[count - 1] + " )");
+            sb.Append(" )");
 
             string sql = sb.ToString();
-            //            insert into comission.entrants(EntrantName, ScoreDiploma, Student)
-            //            values('Mik', '5', 0);
+
             int countRowsUffected = 0;
 
             //----------------------------------
@@ -323,7 +349,6 @@ namespace PlannerLib.DataBase
             int count = Entrails[0].Count;
             for (int i = 1; i < count - 1; i++)
             {
-                //проверка на злощастный тип даты- из за несовпдения форматов
                 if (Entrails[0][i].Equals("DateTime"))
                 {
                     values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");

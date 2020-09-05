@@ -9,7 +9,7 @@
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 
         <div class="form-group">
-            <input asp-for="Email" class="form-control" type="email" placeholder="Email address" required autofocus />
+            <input asp-for="Email" class="form-control"  placeholder="Email address" required autofocus />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
@@ -19,77 +19,16 @@
         </div>
 
         <p></p>
-        <button class="btn btn-lg btn-primary d-inline" type="submit">Sign in</button>
-        <a class="navbar-brand" asp-action="Reg">Registrate</a>
+        <div class="text-left">
+            <button class="btn btn-outline-light"><img src="https://img.icons8.com/color/24/000000/google-logo.png"></button>
+            <button class="btn btn-primary d-inline btn-primary" type="submit">Sign in</button>
+            <a class="navbar-brand" asp-action="Reg">Registrate</a>
+        </div>
+        
 
         <p></p>
         <p></p>
 
-        <a class="btn btn-light d-block" >
-            <img src="https://img.icons8.com/color/24/000000/google-logo.png"> LOGIN BY GOOGLE
-        </a>
+        <a class="navbar-brand" href="/Task/Main">main</a>
+
     </form>
-
-@*<p></p>
-<hr class="mb-2">
-<h4 class="mb-3">all users</h4>
-
-<div class="container text-center">
-    <table class="table-striped">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.password)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.email)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.phone)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.role)
-                </th>
-            </tr>
-        </thead>
-
-        <tbody class="text-left">
-            @foreach (var user in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => user.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => user.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => user.password)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => user.email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => user.phone)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => user.role)
-                    </td>
-
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@user.Id">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@user.Id">Delete</a>
-
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>*@
-

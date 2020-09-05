@@ -7,44 +7,42 @@ namespace PlannerLib.Model
     public class User
     {
 
-        public User() { }
+        public User() { Role = 1; }
 
-        public User(string name, string password, string email, string phone = null)
-        {
-            id = 0;
-            this.name = name;
-            this.password = password;
-            this.email = email;
-            this.phone = phone;
-        }
-
-
-        public User(int id, string name, string password, string email, string phone = null)
-        {
-            this.id = id;
-            this.name = name;
-            this.password = password;
-            this.email = email;
-            this.phone = phone;
-        }
-
-        public int Id { get { return id; } set { id = value; } }
-        public string Name { get { return name; } set { name = value; } }
-        public string Password { get { return password; } set { password = value; } }
-        public string Email { get { return email; } set { email = value; } }
-        public string Phone { get { return phone; } set { phone = value; } }
+        //public User(string name, string password, string email, string phone = null)
+        //{
+        //    id = 0;
+        //    this.name = name;
+        //    this.password = password;
+        //    this.email = email;
+        //    this.phone = phone;
+        //}
 
 
-        public int id;
-        public string name;
-        public string password;
-        public string email;
-        public string phone;
-        public int role = 1;
+        //public User(int id, string name, string password, string email, string phone = null)
+        //{
+        //    this.id = id;
+        //    this.name = name;
+        //    this.password = password;
+        //    this.email = email;
+        //    this.phone = phone;
+        //}
+
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Password { get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public int Role { get; set; }
 
         public override string ToString()
         {
-            return id + " " + name + " " + password + " " + email + " " + phone;
+            return Id + " " + Name + " " + Password + " " + Email + " " + Phone;
         }
 
     }
