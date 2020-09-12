@@ -6,72 +6,69 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 
-<hr class="mb-2">
+<div class="container col-4">
 
-<form class="form-signin  text-center col-md-6" asp-action="Create">
-    <h4 class="mb-3">Create task</h4>
+    <form class="form-check mr-4" asp-action="Create">
+        <div class="form-group row">
+            <h4 class="mb-4">Create task</h4>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="text-left">
 
-    <div class="text-left">
+            <div class="form-group row">
+                <input asp-for="Name" class="form-control col-12" placeholder="name" required autofocus />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
 
-        <div class="form-group">
-            @*<label asp-for="Name" class="control-label"></label>*@
-            <input asp-for="Name" class="form-control" placeholder="name" required autofocus />
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <div class="form-group row">
+                <textarea asp-for="Description" class="form-control col-12" placeholder="description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Priority" class="control-label col-4"></label>
+                <select class="custom-select col-8" asp-for="Priority">
+                    <option value="0">Urgent</option>
+                    <option value="1">High</option>
+                    <option value="2" selected>Medium</option>
+                    <option value="3">Low</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Label" class="control-label col-4"></label>
+                <input asp-for="Label" class="form-control col-8" placeholder="label" />
+                <span asp-validation-for="Label" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Deadline" class="control-label col-4"></label>
+                <input asp-for="Deadline" class="form-control col-8" />
+                <span asp-validation-for="Deadline" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Time_volume" class="control-label col-4">Execution time</label>
+                <select class="custom-select col-8" asp-for="Time_volume">
+                    <option value="1">less than 1 hours</option>
+                    <option value="3">less than 3 hours</option>
+                    <option value="5">more than 3 hours</option>
+                </select>
+                <span asp-validation-for="Time_volume" class="text-danger"></span>
+            </div>
+
         </div>
 
-        <div class="form-group">
-            @*<label asp-for="Description" class="control-label"></label>*@
-            @*<input asp-for="Description" class="form-control" />*@
-            <textarea asp-for="Description" class="form-control" placeholder="description"></textarea>
-            <span asp-validation-for="Description" class="text-danger"></span>
+        <p></p>
+
+        <div class="form-group row">
+            <input type="submit" value="Create" class="btn btn-primary my-2 col-3" />
+            <a class="navbar-brand col-4" asp-action="Main">Cancel</a>
         </div>
 
+    </form>
 
-        <div class="form-group">
-            <label asp-for="Priority" class="control-label"></label>
-            <select class="custom-select mr-sm-2" asp-for="Priority">
-                <option value="0">Urgent</option>
-                <option value="1">High</option>
-                <option value="2" selected>Medium</option>
-                <option value="3">Low</option>
-            </select>
-            @*
-            <input asp-for="Priority" class="form-control" />*@
-            <span asp-validation-for="Priority" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Label" class="control-label"></label>
-            <input asp-for="Label" class="form-control" placeholder="label"/>
-            <span asp-validation-for="Label" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Deadline" class="control-label"></label>
-            <input asp-for="Deadline" class="form-control" />
-            <span asp-validation-for="Deadline" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Time_volume" class="control-label">How long will it take</label>
-            <select class="custom-select mr-sm-2" asp-for="Time_volume">
-                <option value="1">less than 1 hours</option>
-                <option value="3">less than 3 hours</option>
-                <option value="5">more than 3 hours</option>
-            </select>
+</div>
 
-
-            @*<input asp-for="Time_volume" class="form-control" />*@
-            <span asp-validation-for="Time_volume" class="text-danger"></span>
-        </div>
-
-    </div>
-
-    <p></p>
-
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary my-2" />
-        <a class="navbar-brand" asp-action="Main">Cancel</a>
-    </div>
-
-
-</form>

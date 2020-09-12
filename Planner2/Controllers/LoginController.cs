@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Planner.Models;
 using PlannerLib.DataBase;
 using PlannerLib.Model;
 
@@ -26,12 +27,26 @@ namespace Planner.Controllers
         private IConfiguration _config;
         MysqlController<User> userDAL = new MysqlController<User>();
 
-
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
+
+
+        //[HttpGet]
+        //[AllowAnonymous]
+        //public IActionResult Login(string returnUrl)
+        //{
+
+        //    LoginViewModel model = new LoginViewModel { 
+        //        ReturnUrl = returnUrl, 
+        //        ExternalLogins = (await signInManager.Get)
+
+        //    };
+
+        //    return View();
+        //}
 
         [HttpPost]
         public IActionResult Login([Bind("Email", "Password")] User user)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BaK/1FZdC3yZJEhN6r4CA3B6a9fPahGxPiKtM4gEsCJ7LnEu6T0wZj9hSgQd1ZeihLp8FA8vzx3H9xQ4YJRTVg==",
+  "dgSpecHash": "69ckrM33xy8BOVr4a15yPFHar5kNaUt+2Suu3vrKbsAY5XFft5s6DWFoHdAMoiahICn4YfHE8/FjAaxYUOXlpQ==",
   "success": true,
   "projectFilePath": "N:\\VSTUDIO_PR\\Planner\\Planner2\\Planner.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\stasg\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\k4os.compression.lz4.streams\\1.1.11\\k4os.compression.lz4.streams.1.1.11.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
+    "C:\\Users\\stasg\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.8\\microsoft.aspnetcore.authentication.google.3.1.8.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.7\\microsoft.aspnetcore.authentication.jwtbearer.3.1.7.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

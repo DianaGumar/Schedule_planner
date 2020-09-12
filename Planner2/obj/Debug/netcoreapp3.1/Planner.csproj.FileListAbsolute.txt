@@ -129,9 +129,12 @@ N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\System.IdentityModel.Toke
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Main.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TaskEdit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Read.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Create.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Calendar.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TodaySchedule.cshtml.g.cs

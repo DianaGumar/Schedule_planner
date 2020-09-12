@@ -8,9 +8,10 @@
     <title>@ViewData["Title"] - Planner</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </head>
-<body class="text-center ">
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 navbar-dark bg-dark p-0">
             <div class="container">
@@ -22,7 +23,7 @@
 
     @RenderBody()
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center" >
         <div class="container">
             2020 - Planner - autor <a href="https://www.linkedin.com/in/diana-gumar/">Gumar Diana</a>
         </div>

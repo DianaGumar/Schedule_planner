@@ -33,6 +33,12 @@ namespace Planner2
             
             services.AddControllersWithViews();
 
+            //services.AddAuthentication().AddGoogle(options => 
+            //{
+            //    options.ClientId = "443194499437-0bcdgd87nhdflc17g8leq5o4mfoeohd4.apps.googleusercontent.com";
+            //    options.ClientSecret = "xFMg0l6NTRCrslYf9YpeQkYv";
+            //});
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer( options =>
                 {

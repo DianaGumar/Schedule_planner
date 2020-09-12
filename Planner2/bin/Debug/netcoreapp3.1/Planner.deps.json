@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Planner/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.8",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.7",
           "Microsoft.IdentityModel.Tokens": "6.7.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
@@ -390,6 +391,17 @@
         },
         "compile": {
           "lib/netstandard2.0/K4os.Hash.xxHash.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.8": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "3.1.8.0",
+            "fileVersion": "3.100.820.42106"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.7": {
@@ -3672,6 +3684,13 @@
       "sha512": "sha512-jCfNP0inx1sGcP3KSbpiDEH3km2e1sVBjMfKo+V92jr1dL4ZYgA1uhRMl1wAtdGZcbObXIikKqtVlgx3j/CW6g==",
       "path": "k4os.hash.xxhash/1.0.6",
       "hashPath": "k4os.hash.xxhash.1.0.6.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gOfurVsnr/WteLGBkS7YE9caOBEAMQ0LE6IPMUokYqv7YYrHrq/x174eBH5NscN1tfzKu3bDBs1w7tR5ilZfsw==",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.8",
+      "hashPath": "microsoft.aspnetcore.authentication.google.3.1.8.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.7": {
       "type": "package",

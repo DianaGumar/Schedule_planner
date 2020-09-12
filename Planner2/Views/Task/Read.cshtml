@@ -3,42 +3,46 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 
-    <div class="container">
-        <div class="list-group bg-light" style="overflow-y:scroll; position: fixed; height:80%;">
-            @foreach (var task in Model)
-            {
-                <div class="list-group-item list-group-item-action flex-column align-items-start m-1">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h6 class="mb-1">@Html.DisplayFor(modelItem => task.Name)</h6>
-                        @if (task.Deadline != DateTime.MinValue)
-                        {
-                            <small class="label label-default">@Html.DisplayFor(modelItem => task.Deadline)</small>
-                        }
-                    </div>
-
-                    <p class="text-secondary h6 small text-left">@Html.DisplayFor(modelItem => task.Description)</p>
-
-
-                    <div class="d-flex w-100 justify-content-between">
-                        <div class="text-left">
-                            <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => task.Label)</span>
-                        </div>
-                        <div class="btn-group btn-group-sm " role="group">
-                            <a class="btn btn-success" asp-action="AddToSchedule" asp-route-id="@task.Id">Add to schedule</a>
-                            <a class="btn btn-secondary" asp-action="Delete" asp-route-id="@task.Id">Drop</a>
-                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
-                        </div>
-                    </div>
-
+    <div class="list-group overflow-auto" style="max-height: 470px;">
+        @foreach (var task in Model)
+        {
+            <div class="list-group-item list-group-item-action flex-column align-items-start mb-1">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">@Html.DisplayFor(modelItem => task.Name)</h6>
+                    @if (task.Deadline != DateTime.MinValue)
+                    {
+                        <small class="label label-default">@Html.DisplayFor(modelItem => task.Deadline)</small>
+                    }
                 </div>
 
-            }
+                <p class="text-secondary h6 small text-left">@Html.DisplayFor(modelItem => task.Description)</p>
 
-        </div>
 
-        <div class="text-right">
-            <a class="btn btn-primary m-2" asp-action="Create">Create</a>
-        </div>
+                <div class="d-flex w-100 justify-content-between">
+                    <div class="text-left">
+                        <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => task.Label)</span>
+                    </div>
+                    <div class="btn-group btn-group-sm " role="group">
+                        @{
+                            if ((int)ViewData["LimitForDay"] == 0) 
+                            { 
+                                 <a class="btn btn-success" asp-action="AddToScheduler" asp-route-id="@task.Id">Add to schedule</a>
+                            }
+                        } 
+                        
+                        <a class="btn btn-secondary" asp-action="Delete" asp-route-id="@task.Id">Drop</a>
+                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
+                    </div>
+                </div>
+
+            </div>
+
+        }
 
     </div>
+
+    <div class="text-right">
+        <a class="btn btn-primary m-2" asp-action="Create">Create</a>
+    </div>
+
 

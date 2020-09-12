@@ -23,12 +23,11 @@ create table tasks (
     progress int
 );
 
-
-create table schedule (
+create table schedules (
 	id int primary key auto_increment not null,
     task_id int not null,
     schedule_date datetime not null,
-    checked int 
+    make int 
 );
 
 alter table schedule add foreign key (task_id)
