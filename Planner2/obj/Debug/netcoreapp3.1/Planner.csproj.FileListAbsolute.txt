@@ -138,3 +138,5 @@ N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompil
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Calendar.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TodaySchedule.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Edit.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\CreateSmall.cshtml.g.cs

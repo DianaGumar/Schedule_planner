@@ -259,13 +259,22 @@ namespace PlannerLib.DataBase
             for (int i = 1; i < count; i++)
             {
 
+                //if (Entrails[0][i].Equals("DateTime"))
+                //{
+                //    if (values[i].ToString() == DateTime.MinValue.ToString()) { values[i] = null; }
+                //    else
+                //    {
+                //        values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd hh-mm-ss");
+                //    }
+                //}
+
                 if (Entrails[0][i].Equals("DateTime"))
                 {
-                    if (values[i].ToString() == DateTime.MinValue.ToString()) { values[i] = null; }
-                    else
-                    {
-                        values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd hh-mm-ss");
-                    }
+                    values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");
+                }
+                else if (Entrails[0][i].Equals("Nullable`1"))
+                {
+                    if (values[i] is DateTime) { values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd"); }
                 }
 
 
@@ -353,6 +362,11 @@ namespace PlannerLib.DataBase
                 {
                     values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");
                 }
+                else if (Entrails[0][i].Equals("Nullable`1"))
+                {
+                    if (values[i] is DateTime) { values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd"); }
+                }
+
                 sb.Append(Entrails[1][i] + "= '" + values[i] + "', ");
             }
             if (Entrails[0][count - 1].Equals("DateTime"))

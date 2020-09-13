@@ -2,7 +2,7 @@
 
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<h4>Schedule</h4>
+<h4>Schedule for today</h4>
 
 <div class="container text-center m-2">
 
@@ -11,7 +11,7 @@
 
 
         <div class="form-check" >
-            <input class="form-check-input" type="checkbox" asp-action="AddToScheduler" asp-route-id="@task.Id">
+            <input class="form-check-input" type="checkbox" >
             <label class="form-check-label" for="defaultCheck1" >
                 Default checkbox
             </label>
@@ -23,10 +23,9 @@
         <div class="list-group-item list-group-item-action flex-column align-items-start mb-1">
             <div class="d-flex w-100 justify-content-between">
                 <h6 class="mb-1">@Html.DisplayFor(modelItem => task.Name)</h6>
-                @if (task.Deadline != DateTime.MinValue)
-                {
-                    <small class="label label-default">@Html.DisplayFor(modelItem => task.Deadline)</small>
-                }
+
+                <small class="label label-default">@Html.DisplayFor(modelItem => task.Deadline)</small>
+
             </div>
 
             <p class="text-secondary h6 small text-left">@Html.DisplayFor(modelItem => task.Description)</p>
@@ -37,7 +36,7 @@
                 </div>
 
                 <div class="btn-group btn-group-sm" role="group">
-                    <a class="btn btn-success btn-sm" asp-action="AddToScheduler" asp-route-id="@task.Id">Drop from schedule</a>
+                    <a class="btn btn-success btn-sm" asp-action="DropFromScheduler" asp-route-id="@task.Id">Drop from schedule</a>
                     <a class="btn btn-secondary btn-sm" asp-action="Delete" asp-route-id="@task.Id">Drop</a>
                     <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
                 </div>

@@ -20,6 +20,7 @@ namespace Planner.Controllers
 
             ViewData["TaskToday"] = GetTasksToday(tasks);
             ViewData["LimitForDay"] = 0;
+            ViewData["Task"] = new Task();
 
             return View(tasks);
         }
@@ -73,6 +74,19 @@ namespace Planner.Controllers
         }
 
 
+        [HttpPost]
+        public IActionResult CreateSmall([Bind] Task task)
+        {
+            if (ModelState.IsValid)
+            {
+                taskDAL.Create(task);
+            }
+
+            return RedirectToAction("Main");
+
+        }
+
+
         public IActionResult Edit(int id)
         {
             Task task = taskDAL.Reed(id);
@@ -102,6 +116,12 @@ namespace Planner.Controllers
         public IActionResult Delete(int id = 0)
         {
             int b = taskDAL.Delete(id);
+            IEnumerable<Schedule> ss = scheduleDAL.Reed().Where(s => s.Task_id == id);
+            foreach (var item in ss)
+            {
+                scheduleDAL.Delete(item.Id);
+            }
+
             return RedirectToAction("Main");
 
         }
@@ -109,8 +129,19 @@ namespace Planner.Controllers
 
         public IActionResult AddToScheduler(int id = 0)
         {
+            IList<Schedule> schedulespast =
+                scheduleDAL.Reed().Where(s => s.Schedule_date.Date < DateTime.Now.Date).ToList();
+
+            foreach (var item in schedulespast)
+            {
+                scheduleDAL.Delete(item.Id);
+            }
+
+
             IList<Schedule> schedules = 
                 scheduleDAL.Reed().Where(s => s.Schedule_date.Date == DateTime.Now.Date).ToList();
+
+
 
             if(schedules.Count < 3 && schedules.Where(s => s.Task_id == id).Count() == 0)
             {
@@ -130,6 +161,19 @@ namespace Planner.Controllers
 
             return RedirectToAction("Main");
 
+        }
+
+        public IActionResult DropFromScheduler(int id = 0)
+        {
+            IList<Schedule> schedules =
+                scheduleDAL.Reed().Where(s => s.Task_id == id).ToList();
+
+            foreach (var item in schedules)
+            {
+                scheduleDAL.Delete(item.Id);
+            }
+            
+            return RedirectToAction("Main");
         }
 
 

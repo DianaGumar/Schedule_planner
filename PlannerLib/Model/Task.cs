@@ -11,7 +11,7 @@ namespace PlannerLib.Model
         private string name;
         private string description;
         private string label;
-        private DateTime deadline;
+        private DateTime? deadline;
 
 
         public int Id { get; set; }
@@ -24,7 +24,7 @@ namespace PlannerLib.Model
 
         public int Priority { get; set; }
 
-        public DateTime Deadline { set { if (value > DateTime.Now) deadline = value; } get { return deadline; } }
+        public DateTime? Deadline { set { if (value > DateTime.Now) deadline = value; } get { return deadline; } }
 
         public int Time_volume { get; set; }
 

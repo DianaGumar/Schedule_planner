@@ -1,6 +1,6 @@
 ﻿@model PlannerLib.Model.Task
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -8,9 +8,9 @@
 
 <div class="container col-4">
 
-    <form class="form-check mr-4" asp-action="Create">
+    <form class="form-check mr-4" asp-action="Edit">
         <div class="form-group row">
-            <h4 class="mb-4">Create task</h4>
+            <h4 class="mb-4">Edit task</h4>
         </div>
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -45,7 +45,7 @@
 
             <div class="form-group row">
                 <label asp-for="Deadline" class="control-label col-4"></label>
-                <input asp-for="Deadline" class="form-control col-8"/>
+                <input asp-for="Deadline" class="form-control col-8" />
                 <span asp-validation-for="Deadline" class="text-danger"></span>
             </div>
 
@@ -64,7 +64,7 @@
         <p></p>
 
         <div class="form-group row">
-            <input type="submit" value="Create" class="btn btn-primary my-2 col-3" />
+            <input type="submit" value="Edit" class="btn btn-primary my-2 col-3" />
             <a class="navbar-brand col-4" asp-action="Main">Cancel</a>
         </div>
 

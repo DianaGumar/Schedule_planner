@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlannerLib", "..\PlannerLib
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitPlannerTest", "..\XUnitPlannerTest\XUnitPlannerTest.csproj", "{37B8289B-C19A-402C-A8E0-0DF080329726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planner", "..\Planner2\Planner.csproj", "{830F76A9-8710-4081-AF35-49FF1BAE2CDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planner", "..\Planner2\Planner.csproj", "{830F76A9-8710-4081-AF35-49FF1BAE2CDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

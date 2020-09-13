@@ -1,0 +1,17 @@
+﻿@model PlannerLib.Model.Task
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+    <form class="form-check pl-3" asp-action="CreateSmall">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row pr-3">
+            <input asp-for="Name" class="form-control col" placeholder="name" required autofocus />
+            <input type="submit" value="Create" class="btn btn-primary col-2 mx-2" />
+            <a class="btn btn-success col-2" asp-action="Create">more</a>
+        </div>
+    </form>
+    
+
