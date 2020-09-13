@@ -12,33 +12,39 @@
 
         @foreach (var task in Model)
         {
-            <div class="list-group-item list-group-item-action flex-column align-items-start mb-1">
-                <div class="d-flex w-100 justify-content-between">
-                    <h6 class="mb-1">@Html.DisplayFor(modelItem => task.Name)</h6>
-                    <small class="label label-default">@Html.DisplayFor(modelItem => task.Deadline)</small>
-                </div>
+    <div class="list-group-item list-group-item-action flex-column align-items-start mr-1 mb-1 px-2 py-1">
 
-                <p class="text-secondary h6 small text-left">@Html.DisplayFor(modelItem => task.Description)</p>
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">@Html.DisplayFor(modelItem => task.Name)</h5>
+            <small class="label label-default">@Html.DisplayFor(modelItem => task.Deadline)</small>
+        </div>
+
+        <p class="text-secondary h6 small text-left"
+           style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">@Html.DisplayFor(modelItem => task.Description)</p>
 
 
-                <div class="d-flex w-100 justify-content-between">
-                    <div class="text-left">
-                        <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => task.Label)</span>
-                    </div>
-                    <div class="btn-group btn-group-sm " role="group">
-                        @{
-                            if ((int)ViewData["LimitForDay"] == 0)
-                            {
-                                <a class="btn btn-success" asp-action="AddToScheduler" asp-route-id="@task.Id">Add to schedule</a>
-                            }
-                        }
+        <div class="d-flex w-100 justify-content-between">
+            <div class="text-left">
+                <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => task.Label)</span>
+            </div>
+            <div class="btn-group btn-group-sm " role="group">
+                @{
+                    if ((int)ViewData["LimitForDay"] == 0)
+                    {
+                        <a class="btn btn-light" asp-action="AddToScheduler" asp-route-id="@task.Id">To schedule</a>
+                    }
+                }
 
-                        <a class="btn btn-secondary" asp-action="Delete" asp-route-id="@task.Id">Drop</a>
-                        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
-                    </div>
-                </div>
+
+                <a class="btn btn-link" asp-action="Delete" asp-route-id="@task.Id">Drop</a>
+                <a class="btn btn-link" asp-action="Edit" asp-route-id="@task.Id">Edit</a>
+
+
 
             </div>
+        </div>
+
+    </div>
 
         }
 

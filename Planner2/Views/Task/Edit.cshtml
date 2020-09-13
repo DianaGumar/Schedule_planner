@@ -29,10 +29,10 @@
             <div class="form-group row">
                 <label asp-for="Priority" class="control-label col-4"></label>
                 <select class="custom-select col-8" asp-for="Priority">
-                    <option value="0">Urgent</option>
-                    <option value="1">High</option>
-                    <option value="2" selected>Medium</option>
-                    <option value="3">Low</option>
+                    @foreach (PlannerLib.Model.Priority item in Enum.GetValues(typeof(PlannerLib.Model.Priority)))
+                    {
+                        <option value="@item.ToString("d")">@item</option>
+                    }
                 </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
@@ -52,9 +52,10 @@
             <div class="form-group row">
                 <label asp-for="Time_volume" class="control-label col-4">Execution time</label>
                 <select class="custom-select col-8" asp-for="Time_volume">
-                    <option value="1">less than 1 hours</option>
-                    <option value="3">less than 3 hours</option>
-                    <option value="5">more than 3 hours</option>
+                    @foreach (PlannerLib.Model.TimeVolume item in Enum.GetValues(typeof(PlannerLib.Model.TimeVolume)))
+                    {
+                        <option value="@item.ToString("d")">@item</option>
+                    }
                 </select>
                 <span asp-validation-for="Time_volume" class="text-danger"></span>
             </div>

@@ -140,3 +140,4 @@ N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Calendar
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TodaySchedule.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Edit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\CreateSmall.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Open.cshtml.g.cs

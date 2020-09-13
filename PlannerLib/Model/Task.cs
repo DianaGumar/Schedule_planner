@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace PlannerLib.Model
-{
+{ 
+
+    public enum Priority { Urgent , High, Medium, Low }
+    public enum TimeVolume { less_then_1_hours, less_then_3_hours, more_then_3_hours }
+
+
     public class Task
     {
         public Task() { }
@@ -12,6 +17,7 @@ namespace PlannerLib.Model
         private string description;
         private string label;
         private DateTime? deadline;
+        private int progress;
 
 
         public int Id { get; set; }
@@ -28,7 +34,7 @@ namespace PlannerLib.Model
 
         public int Time_volume { get; set; }
 
-        public int Progress { get; set; }
+        public int Progress { get { return progress; } set { if (value < 100) progress = value; } }
 
     }
 }

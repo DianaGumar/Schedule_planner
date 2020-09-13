@@ -4,6 +4,7 @@ using System.Text;
 
 using System.Reflection;
 using MySql.Data.MySqlClient;
+using System.Linq;
 
 namespace PlannerLib.DataBase
 {
@@ -259,15 +260,6 @@ namespace PlannerLib.DataBase
             for (int i = 1; i < count; i++)
             {
 
-                //if (Entrails[0][i].Equals("DateTime"))
-                //{
-                //    if (values[i].ToString() == DateTime.MinValue.ToString()) { values[i] = null; }
-                //    else
-                //    {
-                //        values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd hh-mm-ss");
-                //    }
-                //}
-
                 if (Entrails[0][i].Equals("DateTime"))
                 {
                     values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");
@@ -350,53 +342,93 @@ namespace PlannerLib.DataBase
 
         public override int Update(T obj)
         {
-            //create sql query
-            List<object> values = GetEntrailsValues(obj);
+            ////create sql query
+            //List<object> values = GetEntrailsValues(obj);
+
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append("update " + Name + "s set ");
+            //int count = Entrails[0].Count;
+            //for (int i = 1; i < count - 1; i++)
+            //{
+            //    if (Entrails[0][i].Equals("DateTime"))
+            //    {
+            //        values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");
+            //    }
+            //    else if (Entrails[0][i].Equals("Nullable`1"))
+            //    {
+            //        if (values[i] is DateTime) { values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd"); }
+            //    }
+
+            //    sb.Append(Entrails[1][i] + "= '" + values[i] + "', ");
+            //}
+            //if (Entrails[0][count - 1].Equals("DateTime"))
+            //{
+            //    values[count - 1] = ((DateTime)values[count - 1]).ToString("yyyy-MM-dd");
+            //}
+
+
+            //sb.Append(Entrails[1][count - 1] + "= '" + values[count - 1] + "'");
+            //sb.Append(" where " + Entrails[1][0] + "= " + values[0]);
+
+            //string sql = sb.ToString();
+            //// update comission.entrants set EntrantName = 'Igor', ScoreDiploma = 8, Student = 0 
+            ////where EntrantID = 6;
+            //int countRowsUffected = 0;
+
+            ////----------------------------------
+
+            //try
+            //{
+            //    connection.Open();
+            //    MySqlCommand command = new MySqlCommand(sql, connection);
+            //    countRowsUffected = command.ExecuteNonQuery();
+
+            //}
+            //catch (Exception e)
+            //{
+            //    throw new Exception("Connect to bd exeption: " + e.Message);
+            //}
+            //finally { connection.Close(); }
+
+            //return countRowsUffected;
+
+
+            IEnumerable<object> values = GetEntrailsValues(obj);
 
             StringBuilder sb = new StringBuilder();
-            sb.Append("update " + Name + "s set ");
-            int count = Entrails[0].Count;
-            for (int i = 1; i < count - 1; i++)
-            {
-                if (Entrails[0][i].Equals("DateTime"))
-                {
-                    values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd");
-                }
-                else if (Entrails[0][i].Equals("Nullable`1"))
-                {
-                    if (values[i] is DateTime) { values[i] = ((DateTime)values[i]).ToString("yyyy-MM-dd"); }
-                }
+            string split = "";
 
-                sb.Append(Entrails[1][i] + "= '" + values[i] + "', ");
-            }
-            if (Entrails[0][count - 1].Equals("DateTime"))
+            for (int i = 0; i < values.Count(); i++)
             {
-                values[count - 1] = ((DateTime)values[count - 1]).ToString("yyyy-MM-dd");
+                sb.Append(split);
+                split = ",";
+                sb.Append(Entrails[1][i]);
+                sb.Append("=@");
+                sb.Append(Entrails[1][i]);
             }
-            sb.Append(Entrails[1][count - 1] + "= '" + values[count - 1] + "'");
-            sb.Append(" where " + Entrails[1][0] + "= " + values[0]);
 
-            string sql = sb.ToString();
-            // update comission.entrants set EntrantName = 'Igor', ScoreDiploma = 8, Student = 0 
-            //where EntrantID = 6;
+            string sql = string.Format("update {0}s set {1} where {2} = @{2};",
+                Name, sb.ToString(), Entrails[1][0]);
+
             int countRowsUffected = 0;
 
-            //----------------------------------
-
-            try
+            using (connection)
             {
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(sql, connection);
-                countRowsUffected = command.ExecuteNonQuery();
 
+                for (int i = 0; i < values.Count(); i++)
+                {
+                    command.Parameters.AddWithValue("@" + Entrails[1][i], values.ElementAt(i));
+                }
+
+                countRowsUffected = command.ExecuteNonQuery();
             }
-            catch (Exception e)
-            {
-                throw new Exception("Connect to bd exeption: " + e.Message);
-            }
-            finally { connection.Close(); }
 
             return countRowsUffected;
+
+
+
         }
 
     }

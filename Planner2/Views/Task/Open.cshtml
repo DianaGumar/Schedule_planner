@@ -1,0 +1,92 @@
+﻿@model PlannerLib.Model.Task
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<div class="container row">
+
+    <div class="container col-5 ">
+
+        <div class="list-group-item flex-column align-items-start m-2">
+
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@Html.DisplayFor(modelItem => Model.Name)</h5>
+                <small class="label label-default">@Html.DisplayFor(modelItem => Model.Deadline)</small>
+            </div>
+
+            <p class="text-secondary h6 small text-left"
+               style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+            @Html.DisplayFor(modelItem => Model.Description)</p>
+
+            <div class="d-flex w-100 justify-content-between">
+                <div class="text-left mt-2">
+                    <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => Model.Label)</span>
+                    @{
+                        PlannerLib.Model.Priority p = (PlannerLib.Model.Priority)Model.Priority;
+                        PlannerLib.Model.TimeVolume t = (PlannerLib.Model.TimeVolume)Model.Time_volume;
+                    }
+                    <span class="badge badge-pill badge-dark pull-right">@p</span>
+                    <span class="badge badge-pill badge-info pull-right">@t</span>
+                </div>
+
+                <div class="col-6 pl-5 pr-0">
+
+                    <div class="row pl-3" role="group">
+
+                        <a class="btn-sm btn-link" asp-action="Delete" asp-route-id="@Model.Id">Drop</a>
+                        <a class="btn-sm btn-link" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+
+                    </div>
+
+                    <a class="btn-sm btn-light" asp-action="DropFromScheduler" asp-route-id="@Model.Id">Drop from schedule</a>
+
+
+                </div>
+
+            </div>
+
+
+            @if (Model.Progress > 0)
+            {
+                <div class="progress mt-3" style="height: 5px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: @Model.Progress%;"
+                            aria-valuenow="@Model.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            }
+
+        </div>
+
+
+    </div>
+
+    <div class="container col">
+
+        <h5>Future google doc.. maybe later</h5>
+
+        <form class="form-check" asp-action="EditWork">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group row d-none">
+                <input asp-for="Id" class="form-control col-12" placeholder="Id" required autofocus />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <textarea asp-for="Description" class="form-control col-12" placeholder="description" rows="15"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group row">
+                <input type="submit" value="Save" class="btn btn-primary my-2 col-2" />
+                <a class="navbar-brand col-2" asp-action="Main">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+

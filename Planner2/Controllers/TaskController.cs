@@ -10,8 +10,34 @@ namespace Planner.Controllers
     public class TaskController : Controller
     {
 
-        MysqlController<Task> taskDAL = new MysqlController<Task>();
-        MysqlController<Schedule> scheduleDAL = new MysqlController<Schedule>();
+        public TaskController()
+        {
+            taskDAL = new MysqlController<Task>();
+            scheduleDAL = new MysqlController<Schedule>();
+
+            ViewData["LimitForDay"] = 0;
+
+
+            //перенести в событие
+
+            IList<Schedule> schedulespast =
+               scheduleDAL.Reed().Where(s => s.Schedule_date.Date < DateTime.Now.Date).ToList();
+
+            foreach (var item in schedulespast)
+            {
+                scheduleDAL.Delete(item.Id);
+
+                if (item.Make == 1)
+                {
+                    taskDAL.Delete(item.Task_id);
+                }
+            }
+
+
+        }
+
+        MysqlController<Task> taskDAL;
+        MysqlController<Schedule> scheduleDAL;
 
         [HttpGet]
         public IActionResult Main()
@@ -19,22 +45,50 @@ namespace Planner.Controllers
             IList<Task> tasks = taskDAL.Reed().ToList();
 
             ViewData["TaskToday"] = GetTasksToday(tasks);
-            ViewData["LimitForDay"] = 0;
-            ViewData["Task"] = new Task();
+
+            
+            //ViewData["Task"] = new Task();
 
             return View(tasks);
         }
 
 
+
+        private void Maked(IEnumerable<Schedule> s)
+        {
+
+            Dictionary<int, int> make = new Dictionary<int, int>();
+            foreach (var item in s)
+            {
+                make.Add(item.Task_id, item.Make);
+            }
+
+            ViewData["Maked"] = make;
+
+        }
+
+
         private IList<Task> GetTasksToday(IList<Task> tasks)
         {
-            int[] tasksTodayId = scheduleDAL.Reed().Where(s =>
-               s.Schedule_date.Date == DateTime.Now.Date).Select(i => i.Task_id).ToArray();
+            IEnumerable<Schedule> s = scheduleDAL.Reed();
+            Maked(s);
+
+            int[] tasksTodayId = s.Select(i => i.Task_id).ToArray();
 
             IList<Task> tasksToday = new List<Task>();
+
             foreach (var item in tasksTodayId)
             {
                 tasksToday.Add(tasks.First(t => t.Id == item));
+            }
+           
+            if (tasksTodayId.Count() == 3)
+            {
+                ViewData["LimitForDay"] = 1;
+            }
+            else
+            {
+                ViewData["LimitForDay"] = 0;
             }
 
             return tasksToday;
@@ -87,6 +141,14 @@ namespace Planner.Controllers
         }
 
 
+        public IActionResult Open(int id)
+        {
+            Task task = taskDAL.Reed(id);
+
+            return View(task);
+        }
+
+
         public IActionResult Edit(int id)
         {
             Task task = taskDAL.Reed(id);
@@ -126,24 +188,45 @@ namespace Planner.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult EditWork([Bind] Task task)
+        {
+
+            Task tasknew = taskDAL.Reed(task.Id);
+            tasknew.Description = task.Description;
+
+            tasknew.Progress += 10;
+            taskDAL.Update(tasknew);
+
+            return RedirectToAction("Main");
+
+        }
+
+
+        public IActionResult Maked(int id = 0)
+        {
+            Schedule s = scheduleDAL.Reed().Where(s => s.Schedule_date.Date == DateTime.Now.Date)
+                .First(s => s.Task_id == id);
+
+            if (s.Make == 0) { s.Make = 1; }
+            else { s.Make = 0; }
+
+            scheduleDAL.Update(s);
+
+            ViewData["Maked"] = s.Make;
+
+            return RedirectToAction("Main");
+
+        }
+
 
         public IActionResult AddToScheduler(int id = 0)
         {
-            IList<Schedule> schedulespast =
-                scheduleDAL.Reed().Where(s => s.Schedule_date.Date < DateTime.Now.Date).ToList();
+            ////drop maked and past tasks
 
-            foreach (var item in schedulespast)
-            {
-                scheduleDAL.Delete(item.Id);
-            }
+            IList<Schedule> schedules = scheduleDAL.Reed().ToList();
 
-
-            IList<Schedule> schedules = 
-                scheduleDAL.Reed().Where(s => s.Schedule_date.Date == DateTime.Now.Date).ToList();
-
-
-
-            if(schedules.Count < 3 && schedules.Where(s => s.Task_id == id).Count() == 0)
+            if (schedules.Count < 3 && schedules.Where(s => s.Task_id == id).Count() == 0)
             {
 
                 Schedule schedule = new Schedule();
@@ -152,11 +235,7 @@ namespace Planner.Controllers
 
                 int b = scheduleDAL.Create(schedule);
 
-                ViewData["LimitForDay"] = 0;
-            }
-            else
-            {
-                ViewData["LimitForDay"] = 1;
+                
             }
 
             return RedirectToAction("Main");
@@ -172,7 +251,9 @@ namespace Planner.Controllers
             {
                 scheduleDAL.Delete(item.Id);
             }
-            
+
+            ViewData["LimitForDay"] = 0;
+
             return RedirectToAction("Main");
         }
 
