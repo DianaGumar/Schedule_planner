@@ -16,6 +16,8 @@ namespace Planner.Controllers
             scheduleDAL = new MysqlController<Schedule>();
 
             ViewData["LimitForDay"] = 0;
+            @ViewData["Sync"] = new Planner.Models.CalendarId();
+
 
 
             //перенести в событие
@@ -256,6 +258,49 @@ namespace Planner.Controllers
 
             return RedirectToAction("Main");
         }
+
+        [HttpPost]
+        public IActionResult Sinhronize([Bind] Planner.Models.CalendarId calendarId)
+        {
+
+            IEnumerable<Task> tasks = PlannerLib.workLoggic.GoogleSync.GetTasksFromGoogleCalendar(calendarId.Id);
+
+            IEnumerable<Task> localTasks = taskDAL.Reed();
+
+            //находим совпадения и исключаем их
+            IEnumerable<string> originalTasksNames = tasks.Select(x => x.Name).Except(localTasks.Select(y => y.Name)).ToList();
+
+
+            foreach (var item in originalTasksNames)
+            {
+                taskDAL.Create(tasks.First(t => t.Name == item));
+            }
+
+            //проверка на отсутствие тех тасков что есть в локальных, но нет в подтянутых с конкретным лейблом
+            localTasks = localTasks.Where(lt => lt.Label == calendarId.Id);
+
+            IEnumerable<string> originalTasksNamesPast =
+                localTasks.Select(x => x.Name).Except(tasks.Select(y => y.Name)).ToList();
+
+            IEnumerable<Schedule> s = scheduleDAL.Reed();
+
+            foreach (var item in originalTasksNamesPast)
+            {
+                var t = localTasks.First(t => t.Name == item);
+
+                var sss = s.FirstOrDefault(ss => ss.Task_id == t.Id);
+                if (sss != null)
+                {
+                    scheduleDAL.Delete(s.FirstOrDefault(ss => ss.Task_id == t.Id).Id);
+                }
+
+                taskDAL.Delete(t.Id);
+            }
+
+
+            return RedirectToAction("Main");
+        }
+
 
 
 

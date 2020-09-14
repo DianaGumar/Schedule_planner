@@ -38,6 +38,14 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Google.Apis.Calendar.v3": {
+              "target": "Package",
+              "version": "[1.49.0.2072, )"
+            },
+            "Google.Apis.Tasks.v1": {
+              "target": "Package",
+              "version": "[1.49.0.2052, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.21, )"

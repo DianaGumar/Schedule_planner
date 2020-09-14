@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "taskplanner-289113",
+  "private_key_id": "369f31041766774612d806d14e15868d85fd2ac9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnd+nv8SBSqPgD\n0oQSXauIAqsNv4jCJo78+ReeSVYK6Dgl7R5mPudNE7unrtXV71igHNPVr5WzaZ+T\n7LXMZXlYNg0U1xJjcb5qsZH/MSoLBZU+kvvl3yTA1VcoJ7sBWTAfE9BEdmDkMTeE\nuhD7H6VDpFLUSfLj0okMKWZj6dmt0tUYoMEBxttXHUlZ6uybaogKPt3WZxYyKfy9\nLlGSXJVFHg9ml7K4hbKA0oe2mZzv5T51TNfm7GEWIcLTpv37SpnZ95Hl+BVV7f9Q\nWCQU4iKMfZPEkfYA0dAF6V1js3vmiGZMEgcbonxirSb+mEnQB/e75WVGhi6cPv04\nsC6KZrlfAgMBAAECggEAMsvKDwgGBFyRIeOsQL/dxBr/FGP40N8ONwg9FDttWFCY\nm1RhiKTi1ru6C0IaRVJcgPBNhr7D+w/6Ic3GVPGgjVOTwzL7NmOtXMJwpMWeWYp/\neuPteQumo8DyN1FZxS5uzLZfUSzQ9dZB30Xq2aj/IVXJ8+9cN6NIA4LZNkwbxT+0\nT7/qRiUp4hwx71+Y0NkdDZbbH1Y9BvBS+LJhOn5XyLiVrWyrabpKflwBUg82ifRN\nl6eQiFyCqFG73OZYl7Ww0gXF1v3pY85Q4z8t7nt3g4E85zma+tyaInmO8GtzLAU2\nf2ipeHrk3O2wCQvLVDRHzoWcvR3NRWhjS0gS33hZtQKBgQDjWfvEEW8S58s+QTgm\nt2jrjgKpeQDREye/1Rv7J5iqX6xGq2sm1GuEcxG69L9qFaSzM951GMgmc25BFKiB\nApxvAcyp5JxwwcQt30Qk0cvfdy8XeNoP9qZyYVZLt/dSU8UVMx6yb+xaQTNm6AhC\n4u5uY59ksgDVlEZ+YC+uAWYFJQKBgQC8kjE89/lb/x/RUUCwUFoPbWg07dMCVrjO\nsBkp+3okGb6i42n9mCMqgqErJ2PuGzs2NvcyCvIPx2sfUos1cEOUi9SmTbdbVLxC\nr4e+kO/scFbvUXZBbjgnZ7qRU537J3GUEbRWogJraQN21xTfxRk6L1JbBwpCUVK0\ndkmtbZn3MwKBgAMXRxf8ULFGG3pGMrg8CB4juR+KuJsfEoxGHnJEsIuob1QqonNN\nsgSD9/q9txh/INUa4GxhIN989EPIPx455dyQfrLUm9fgmoUxIuEJRSdNnINKLlTH\nOq4VarHu11r0LprCLimo4eK8PjGo9+vI4Ar6KcGZte8xa9/t+Nf5xuRNAoGAbQk/\nbViZmGdp93e7JvgfS0Jg+hH2bCjHDcRnmI3v70XvpHJJDDjXRLJqDPDm6HxYfZ3E\ny+vmUddmiqMJGapDeXZtTIgtmKLjhM/IdxmJkbbXneQFtAnOcIKbL4MhG2OQWiTu\nmRVuvrrnJOVzDX0DfFB2l2n3taceYnjvW1e/ql8CgYEAjfuCts7Om90a91+Zezsw\nubj0qvLHjfp88XpuDuG8uf2oCn+yrXevcoX8gdAJFrF2DR4kB0FuyRvq/4vjMVPZ\n1yW0OTALHDkpcCmpRFz4bqiENa7k5kHbtLNORe/gjdxAgukNIxh81JFsTGl6nWm3\n0H0vysyOSv1pS5dctejr3N8=\n-----END PRIVATE KEY-----\n",
+  //"client_email": "planner@taskplanner-289113.iam.gserviceaccount.com",
+  "client_email": "planner@taskplanner-289113.iam.gserviceaccount.com",
+  "client_id": "106764627727877506068",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/planner%40taskplanner-289113.iam.gserviceaccount.com"
+}

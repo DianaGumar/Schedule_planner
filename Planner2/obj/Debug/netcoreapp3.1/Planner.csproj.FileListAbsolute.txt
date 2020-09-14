@@ -136,8 +136,15 @@ N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Create.c
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Calendar.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TodaySchedule.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Edit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\CreateSmall.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Open.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Calendar.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Auth.PlatformServices.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Auth.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Calendar.v3.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Tasks.v1.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\taskplanner-289113-369f31041766.json

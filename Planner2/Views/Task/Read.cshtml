@@ -25,7 +25,9 @@
 
         <div class="d-flex w-100 justify-content-between">
             <div class="text-left">
-                <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => task.Label)</span>
+                <span class="badge badge-pill badge-primary pull-right"
+                      style="max-width: 170px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+                      >@Html.DisplayFor(modelItem => task.Label)</span>
             </div>
             <div class="btn-group btn-group-sm " role="group">
                 @{

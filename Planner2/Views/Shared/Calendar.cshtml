@@ -1,0 +1,17 @@
+﻿@model Planner.Models.CalendarId
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<form class="form-check pl-3" asp-action="Sinhronize">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group row pr-3">
+        <input asp-for="Id" class="form-control col" placeholder="Calendar id" required />
+        <input type="submit" value="Sync" class="btn btn-primary col-2 mx-2" />
+        @*<a class="btn btn-success col-2" asp-action="Sinhronize">Sync</a>*@
+    </div>
+</form>
+
+

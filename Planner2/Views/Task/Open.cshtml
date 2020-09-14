@@ -23,7 +23,8 @@
 
             <div class="d-flex w-100 justify-content-between">
                 <div class="text-left mt-2">
-                    <span class="badge badge-pill badge-primary pull-right">@Html.DisplayFor(modelItem => Model.Label)</span>
+                    <span class="badge badge-pill badge-primary pull-right" 
+                          style="max-width: 170px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">@Html.DisplayFor(modelItem => Model.Label)</span>
                     @{
                         PlannerLib.Model.Priority p = (PlannerLib.Model.Priority)Model.Priority;
                         PlannerLib.Model.TimeVolume t = (PlannerLib.Model.TimeVolume)Model.Time_volume;
@@ -75,7 +76,7 @@
             </div>
 
             <div class="form-group row">
-                <textarea asp-for="Description" class="form-control col-12" placeholder="description" rows="15"></textarea>
+                <textarea asp-for="Description" class="form-control col-12" placeholder="description"  rows="15"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
