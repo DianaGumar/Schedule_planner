@@ -247,7 +247,6 @@ namespace PlannerLib.DataBase
             return entity;
         }
 
-
         public override int Create(T obj)
         {
             //create sql query

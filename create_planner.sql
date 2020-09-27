@@ -30,7 +30,7 @@ create table schedules (
     make int 
 );
 
-alter table schedule add foreign key (task_id)
+alter table schedules add foreign key (task_id)
 	references tasks (id) on delete cascade;
 
 

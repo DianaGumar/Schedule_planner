@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6sg0yDw0+guDHrbg7hPmo0uU8TlH4N76NTpMbLN0qQxD4WXZZxw0LFbtELiMJmx46xSIKVXVYBLvicJwEIG1Jw==",
+  "dgSpecHash": "d4XmHnWwItv+4fB890kk5HLtn1uIKrqL0SG+d3jMmm+oJmuqZ32VqNtlzCkBuTJloMtVuos1j069pDLOHW8ylw==",
   "success": true,
   "projectFilePath": "N:\\VSTUDIO_PR\\Planner\\Planner2\\Planner.csproj",
   "expectedPackageFiles": [
@@ -68,6 +68,8 @@
     "C:\\Users\\stasg\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\ssh.net\\2016.1.0\\ssh.net.2016.1.0.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\sshnet.security.cryptography\\1.2.0\\sshnet.security.cryptography.1.2.0.nupkg.sha512",
+    "C:\\Users\\stasg\\.nuget\\packages\\syncfusion.ej2.aspnet.core\\18.2.0.58\\syncfusion.ej2.aspnet.core.18.2.0.58.nupkg.sha512",
+    "C:\\Users\\stasg\\.nuget\\packages\\syncfusion.licensing\\18.2.0.58\\syncfusion.licensing.18.2.0.58.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\stasg\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

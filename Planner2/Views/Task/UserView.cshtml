@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PlannerLib.Model.User>
+
+<p></p>
+<hr class="mb-2">
+<h5 class="text-info">all users</h5>
+
+<div class="container text-center m-2">
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="text-left">
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => user.Role)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@user.Id">Delete</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

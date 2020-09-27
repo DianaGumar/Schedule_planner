@@ -262,9 +262,17 @@ namespace Planner.Controllers
         [HttpPost]
         public IActionResult Sinhronize([Bind] Planner.Models.CalendarId calendarId)
         {
+            IEnumerable<Task> tasks = new List<Task>();
 
-            IEnumerable<Task> tasks = PlannerLib.workLoggic.GoogleSync.GetTasksFromGoogleCalendar(calendarId.Id);
-
+            try
+            {
+                tasks = PlannerLib.workLoggic.GoogleSync.GetTasksFromGoogleCalendar(calendarId.Id);
+            }
+            catch
+            {
+                return RedirectToAction("Main");
+            }
+            
             IEnumerable<Task> localTasks = taskDAL.Reed();
 
             //находим совпадения и исключаем их

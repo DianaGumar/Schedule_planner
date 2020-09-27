@@ -118,3 +118,9 @@ N:\VSTUDIO_PR\Planner\XUnitPlannerTest\obj\Debug\netcoreapp3.1\XUnitPlannerTest.
 N:\VSTUDIO_PR\Planner\XUnitPlannerTest\obj\Debug\netcoreapp3.1\XUnitPlannerTest.dll
 N:\VSTUDIO_PR\Planner\XUnitPlannerTest\obj\Debug\netcoreapp3.1\XUnitPlannerTest.pdb
 N:\VSTUDIO_PR\Planner\XUnitPlannerTest\obj\Debug\netcoreapp3.1\XUnitPlannerTest.genruntimeconfig.cache
+N:\VSTUDIO_PR\Planner\XUnitPlannerTest\bin\Debug\netcoreapp3.1\Google.Apis.dll
+N:\VSTUDIO_PR\Planner\XUnitPlannerTest\bin\Debug\netcoreapp3.1\Google.Apis.Auth.PlatformServices.dll
+N:\VSTUDIO_PR\Planner\XUnitPlannerTest\bin\Debug\netcoreapp3.1\Google.Apis.Auth.dll
+N:\VSTUDIO_PR\Planner\XUnitPlannerTest\bin\Debug\netcoreapp3.1\Google.Apis.Calendar.v3.dll
+N:\VSTUDIO_PR\Planner\XUnitPlannerTest\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
+N:\VSTUDIO_PR\Planner\XUnitPlannerTest\bin\Debug\netcoreapp3.1\Google.Apis.Tasks.v1.dll

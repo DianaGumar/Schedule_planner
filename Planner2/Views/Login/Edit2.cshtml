@@ -1,0 +1,54 @@
+﻿@model PlannerLib.Model.User
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<form class="form-signin  text-center col-md-6" asp-action="Edit">
+    <h4 class="mb-3">User edit</h4>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="text-left">
+
+
+        <div class="form-group">
+            <label asp-for="Name" class="label"></label>
+            <input asp-for="Name" class="form-control" placeholder="Name" required/>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="label"></label>
+            <input asp-for="Password" class="form-control" placeholder="Password" required />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="label"></label>
+            <input asp-for="Email" class="form-control" type="email" placeholder="you@example.com" required/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone" class="label"></label>
+            <input asp-for="Phone" class="form-control"/>
+            <small class="text-muted">(optional)</small>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+    </div>
+
+    <p></p>
+
+    <input type="submit" value="Edit" class="btn btn-primary my-2" />
+    <a class="navbar-brand" asp-action="Login">log in</a>
+
+    
+
+</form>
+
+@section Scripts{ 
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

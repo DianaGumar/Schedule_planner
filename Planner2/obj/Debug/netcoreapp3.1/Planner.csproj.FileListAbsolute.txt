@@ -119,7 +119,6 @@ N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Login\Edit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Login\Reg.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
@@ -130,12 +129,9 @@ N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Auth
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Main.cshtml.g.cs
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TaskEdit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Read.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Create.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
-N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\TodaySchedule.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\Edit.cshtml.g.cs
 N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\CreateSmall.cshtml.g.cs
@@ -148,3 +144,10 @@ N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Calendar.v3.d
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Core.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Google.Apis.Tasks.v1.dll
 N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\taskplanner-289113-369f31041766.json
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Login\Edit2.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Razor\Views\Task\UserView.cshtml.g.cs
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Syncfusion.EJ2.dll
+N:\VSTUDIO_PR\Planner\Planner2\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.csproj.CoreCompileInputs.cache
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cs
+N:\VSTUDIO_PR\Planner\Planner2\obj\Debug\netcoreapp3.1\Planner.MvcApplicationPartsAssemblyInfo.cache
